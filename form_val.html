@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function checkName(elem, msg){
+      //이름에 관한 정규식 지정 문자가
+      var exp = /^.+$/;
+      if(elem.value.match(exp)){
+        return true;
+      }else{
+        alert(msg);
+        elem.focus();
+        return false;
+      }
+    }
+
+    function checkAddr(elem, msg){
+      //주소에 관한 정규식 지정
+      var exp = /^\w+$/;
+      if(elem.value.match(exp)){
+        return true;
+      }else{
+        alert(msg);
+        elem.focus();
+        return false;
+      }
+    }
+
+    function checkUserName(elem, msg1, msg2){
+      var exp = /^.{6,8}$/;
+      if(elem.value.match(exp)){
+        alert(msg1);
+        return true;
+      }else{
+        alert(msg2);
+        elem.focus();
+        return false;
+      }
+    }
+
+    function checkEmail(elem, msg){
+      var exp = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+$/;
+      if(elem.value.match(exp)){
+        return true;
+      }else{
+        alert(msg);
+        elem.focus();
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h3>회원가입</h3>
+  <form>
+    이름: <input type="text" id="name"></br>
+    주소: <input type="text" id="addr"></br>
+    생일: <input type="date" id="birthday"></br>
+
+    아이디(6-8 문자): <input type="text" id="username">
+    <input type="button" onclick="checkUserName(document.getElementById('username'),'사용 가능한 아이디입니다.','6이상 8자 이하의 문자로 입력해주세요.')" value="중복확인"/></br>
+
+    이메일: <input type="email" id="email"></br>
+    휴대폰: <input type="tel" id="phone"></br>
+    <!--placeholder-->
+    <input type="button" onclick="checkAddr(document.getElementById('addr'),'주소를 다시 확인해주세요.'), 
+                                  checkName(document.getElementById('name'),'문자로 입력해주세요.'),
+                                  checkEmail(document.getElementById('email'),'메일 주소를 다시 확인해주세요.')" value="확인"></br>
+  </form>
+</body>
+</html>

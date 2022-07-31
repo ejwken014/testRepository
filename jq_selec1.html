@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script>
+    //(document).ready를 쓰지 않고 function만 써도 가능하다.
+    $(function(){
+      //이어서 두 가지도 동시에 가능
+      $("#tit3").css("background-color","#0ff")//이어서 css를 줄 때는 끝에 ;를 붙이지 않는다.
+                .css("color","#fff");
+      $("h2").css("border","2px solid #0ff");
+    });
+  </script>
+</head>
+<body>
+  <h1>제이쿼리</h1>
+  <h2>선택자</h2>
+  <h3 id="tit3">직접 선택자</h3>
+  <h3>인접 선택자</h3>
+</body>
+</html>

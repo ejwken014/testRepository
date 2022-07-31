@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function checkNumeric(elem, msg){
+      //정규식  ^:시작 $:끝 / [0-9] : 0에서9사이의 숫자 / + : 1회 이상
+      //[0-9]사이로 시작해서 적어도 1회 이상 반복해야 하며 숫자로 끝나야 한다.
+      var exp = /^[0-9]+$/;
+      
+      //받은 elem의 value가 exp와 같은지 확인
+      if(elem.value.match(exp)){
+        return true;
+      }else{
+        alert(msg);
+        //focus(); 버튼의 경우 엔터키를 눌렀을 때 클릭효과,
+        //         텍스트창의 경우, 커서를 위치시켜 바로 입력 가능
+        elem.focus();
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <form>
+    전화번호(-없이 입력): <input type="text" id="phone"/>
+    <input type="button"
+    onclick="checkNumeric(document.getElementById('phone'),'숫자만 입력하세요!')" value="확인"/>
+  </form>
+</body>
+</html>

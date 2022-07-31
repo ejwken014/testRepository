@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script>
+    //그룹 선택자 : $("선택1, 선택2, 선택3, ...선택n")
+    //종속 선택자 : $("p.txt_1"), $("p#txt_1")
+    //전체 선택자 : $("*")
+    //요소 선택자 : $("요소명") ex)$("h2")
+
+    //document가 로딩이 완료 되면 function을 실행
+    $(document).ready(function(){
+      //id 이름이 txt인 것을 찾아 글자색을 red로 변경
+      //id선택자
+      $("#txt").css("color","red");
+      //클래스 이름이 check인 것을 찾아 글자색을 green으로 변경
+      //클래스 선택자
+      $(".check").css("color","green");
+    });
+  </script>
+</head>
+<body>
+  <p id="txt">내용</p>
+  <p class="check">클래스입니다.</p>
+</body>
+</html>

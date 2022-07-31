@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function checkSelection(elem, msg){
+      if(elem.value == 0){
+        alert(msg);
+        elem.focus();
+        //focus(); 버튼의 경우 엔터키를 눌렀을 때 클릭효과,
+        //         텍스트창의 경우, 커서를 위치시켜 바로 입력 가능
+        return false;
+      }else{
+        return true;
+        console.log(elem.value);
+      }
+    }
+
+  </script>
+</head>
+<body>
+  <form>
+    과일선택 <select id="fruits" class="required">
+      <option value="0">선택하세요</option>
+      <option value="1">사과</option>
+      <option value="2">배</option>
+      <option value="3">바나나</option>
+    </select>
+    <input type="button"
+    onclick="checkSelection(document.getElementById('fruits'),'하나를 선택하여야 합니다.')" value="확인"/>
+  </form>
+</body>
+</html>
